@@ -59,12 +59,8 @@
                         <form class="d-inline-block " action="{{ route('product.destroy',$product->productID) }}" method="post" >
                           {{ csrf_field() }}
                           @method('DELETE')
-                          {{-- HTML không có các method PUT, PATCH, DELETE, nên cần dùng lệnh @method để có thể gán các method này --}}
-                          {{-- or --}}
-                          {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
-                          {{-- <input type="hidden" name="_method" value="delete"> --}}
-                          
-                          <input type="submit" value="Xóa" class="button btn btn-danger">
+                          <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="button btn btn-danger">Xóa</button>
+                        
                           </form>
                       
                       </td>

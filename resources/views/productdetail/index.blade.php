@@ -19,16 +19,22 @@
        <tr>
         <td>
            {{ $product->productName }} 
-        <td>
-             <div class="product-image-thumb" ><img src="../public/upload/{{ $product->productImage1 }}" alt="Product Image"></div>
-             @if ($product->productImage2 != null)
-             <div class="product-image-thumb" ><img src="../public/upload/{{ $product->productImage2 }}" alt="Product Image"></div>
-             @endif
-             @if ($product->productImage3 != null)
-             <div class="product-image-thumb" ><img src="../public/upload/{{ $product->productImage3 }}" alt="Product Image"></div>    
-             @endif
-             
+           <td>
+            <div class="product-image-thumb">
+                <img src="{{ asset('upload/' . $product->productImage1) }}" alt="Product Image">
+            </div>
+            @if ($product->productImage2 != null)
+                <div class="product-image-thumb">
+                    <img src="{{ asset('upload/' . $product->productImage2) }}" alt="Product Image">
+                </div>
+            @endif
+            @if ($product->productImage3 != null)
+                <div class="product-image-thumb">
+                    <img src="{{ asset('upload/' . $product->productImage3) }}" alt="Product Image">
+                </div>
+            @endif
         </td>
+        
         <td>
             {{ $product->brand }} 
         </td>
@@ -38,12 +44,8 @@
             <form class="d-inline-block " action="{{ route('prodetail.destroy',$product->id) }}" method="post" >
               {{ csrf_field() }}
               @method('DELETE')
-              {{-- HTML không có các method PUT, PATCH, DELETE, nên cần dùng lệnh @method để có thể gán các method này --}}
-              {{-- or --}}
-              {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
-              {{-- <input type="hidden" name="_method" value="delete"> --}}
+              <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="button btn btn-danger">Xóa</button>
               
-              <input type="submit" value="Xóa" class="button btn btn-danger">
               </form>
           
           </td>

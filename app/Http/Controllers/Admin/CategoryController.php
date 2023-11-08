@@ -79,11 +79,27 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $category = Category::find($id);
-        $category->categoryName = $request->categoryName;
-        $category->cate_description = $request->cate_description;
-        $category->save();
-        return redirect()->route('category.index');
+        $product = Product::find($id);
+
+
+        if ($request->hasFile('productImage')) {
+            $des = 'public/upload';
+            $imgname = $request->file('productImage')->getClientOriginalName();
+            $request->file('productImage')->move($des, $imgname);
+            $product->productImage = $imgname;
+        }
+    
+
+        $product->categoryID = $request->categoryID;
+        $product->productName = $request->productName;
+        $product->listPrice = $request->listPrice;
+        $product->discountPercent = $request->discountPercent;
+        $product->description = $request->description;
+    
+
+        $product->save();
+    
+        return redirect()->route('product.index');
     }
 
     /**
