@@ -7,40 +7,40 @@
         <div class="row ">
             <div class="col-sm-4">
                 <div class="pic p-0 img_sp">
-                    <img src="../public/upload/case2.webp" alt="" style="" class="xzoom"
-                        xoriginal="../public/upload/case2.webp">
+                    <img src="{{ asset('upload/cpu3.jpg')}}" alt="" style="" class="xzoom"
+                        xoriginal="{{ asset('upload/cpu3.jpg')}}">
                 </div>
                 <div class="img_sp_chitiet xzoom-thums">
-                    <a href="../public/upload/case2.webp" class="card">
-                        <img src="../public/upload/case2.webp" xpreview="../public/upload/case2.webp" class="xzoom-gallery">
+                    <a href="{{ asset('upload/cpu3.jpg')}}" class="card">
+                        <img src="{{ asset('upload/cpu3.jpg')}}" xpreview="{{ asset('upload/cpu3.jpg')}}" class="xzoom-gallery">
                     </a>
-                    <a href="../public/upload/case1.webp" class="card">
-                        <img src="../public/upload/case1.webp" class="xzoom-gallery">
+                    <a href="{{ asset('upload/cpu3.jpg')}}" class="card">
+                        <img src="{{ asset('upload/cpu3.jpg')}}" class="xzoom-gallery">
                     </a>
-                    <a href="../public/upload/case2.webp" class="card">
-                        <img src="../public/upload/case2.webp" class="xzoom-gallery">
+                    <a href="{{ asset('upload/cpu3.jpg')}}" class="card">
+                        <img src="{{ asset('upload/cpu3.jpg')}}" class="xzoom-gallery">
                     </a>
-                    <a href="../public/upload/case2.webp" class="card">
-                        <img src="../public/upload/case2.webp" class="xzoom-gallery">
+                    <a href="{{ asset('upload/cpu3.jpg')}}" class="card">
+                        <img src="{{ asset('upload/cpu3.jpg')}}" class="xzoom-gallery">
                     </a>
                 </div>
 
             </div>
             <div class="col-sm-8">
-                <h4 style="color: #4A235A;" class="font-weight-bold">Vỏ case Xigmatek X Battleship ( No fan)</h4>
+                <h4 style="color: #4A235A;" class="font-weight-bold">CPU Intel Core i3-10100F + Quạt</h4>
                 <div class="no-review font-weight-bold mt-3">Chưa có đánh giá</div>
                 <div class="d-flex flex-column p-2" style="background-color: rgba(219, 219, 219, 0.26);">
                     <div class="d-flex justify-content-around ">
                         <div class="p-2 text-secondary">Giá niêm yết</div>
                         <div class="p-2 old-price">
-                            <h5>2.799.000 VNĐ</h5>
+                            <h5>1.990.000 VNĐ</h5>
                         </div>
 
                     </div>
                     <div class="d-flex justify-content-around ">
                         <div class="p-2 text-secondary">Giá khuyến mãi</div>
                         <div class="p-2 new-price">
-                            <h5>2.599.000 VNĐ</h5>
+                            <h5>1.890.000 VNĐ</h5>
 
                         </div>
 
@@ -67,8 +67,8 @@
 
                 </div>
                 <div class="f-lex mt-4" style="margin-left: 100px;">
-                    <a style="width:170px;" href="" class="btn btn-danger mr-4">MUA NGAY</a>
-                    <a style="width:220px; border: 2px solid;" onclick="" href="javascript:"
+                    <a style="width:170px;" href="{{ route('add.itemcart', $product->productID)}}" class="btn btn-danger mr-4">MUA NGAY</a>
+                    <a style="width:220px; border: 2px solid;" onclick="AddCart({{ $product->productID }})" href="javascript:"
                         class="btn btn-outline-danger font-weight-bold"><i class="fas fa-cart-arrow-down"></i> THÊM VÀO
                         GIỎ HÀNG</a>
 
@@ -94,7 +94,6 @@
             <div class="col-4">
                 <div class=" font-weight-bold">Mô Tả</div>
                 <h6>Vỏ case Xigmatek X Battleship ( No fan)</h6>
-                <div> {!! $product->description !!}</div>
 
 
                 <!-- Button to Open the Modal -->
@@ -165,7 +164,7 @@
                     <div class="slider-box">
                         <p class="time">New</p>
                         <div class="img-box">
-                            <img src="../public/upload/case1.webp">
+                            <img src="{{ asset('/upload/case1.webp')}}">
                         </div>
 
                         <p class="detail product-title" data-toggle="tooltip" data-placement="bottom"
@@ -184,7 +183,7 @@
                   <div class="slider-box">
                       <p class="time">New</p>
                       <div class="img-box">
-                          <img src="../public/upload/case1.webp">
+                          <img src="{{ asset('/upload/case1.webp')}}">
                       </div>
 
                       <p class="detail product-title" data-toggle="tooltip" data-placement="bottom"
@@ -203,7 +202,7 @@
                 <div class="slider-box">
                     <p class="time">New</p>
                     <div class="img-box">
-                        <img src="../public/upload/case1.webp">
+                        <img src="{{ asset('/upload/case1.webp')}}">
                     </div>
 
                     <p class="detail product-title" data-toggle="tooltip" data-placement="bottom"
@@ -222,7 +221,7 @@
               <div class="slider-box">
                   <p class="time">New</p>
                   <div class="img-box">
-                      <img src="../public/upload/case1.webp">
+                      <img src="{{ asset('/upload/case1.webp')}}">
                   </div>
 
                   <p class="detail product-title" data-toggle="tooltip" data-placement="bottom"

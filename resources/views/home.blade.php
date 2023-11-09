@@ -65,177 +65,34 @@
             <div class="product-group mt-2">
                 <div class="row ">
                     <!-- dat foreach -->
+                    @foreach ($products as $product)
                     <div class="col-md-3 col-sm-6 col-12">
                         <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu3.jpg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('upload/' . $product->productImage)}}" alt="Card image cap">
                             <div class="card-body">
                                 <h6 class="card-title product-title mb-3">
                                     <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-                CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
+                                        title="{{$product->productName}}">
+                                        {{$product->productName}}
                                     </a>
 
                                 </h6>
                                 <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
+                                    <span class="new-price"> {{number_format($product->listPrice)}} VNĐ</span>
+                                    <span class="old-price text-secondary"> {{number_format($product->listPrice)}} VNĐ </span>
                                     <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
+                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="AddCart({{ $product->productID }})" href="javascript:"><i
                                             class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href=""> Xem
+                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="{{ url('showdetail/33') }}"> Xem
                                         chi tiết</a>
                                     <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
+                                        <h6>{{ $product->discountPercent }}%</h6>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu1.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-            CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href=""> Xem
-                                        chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu2.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-        CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu4.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-        CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/case3.jp')}}g" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-      CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/case8.jp')}}g" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom" title="
-    CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <!--end-->
                 </div>
 
