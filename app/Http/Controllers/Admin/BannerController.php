@@ -17,8 +17,9 @@ class BannerController extends Controller
      */
     public function index()
     {
+        $slides = Banner::paginate(5);
         $slide = DB::table('banner')->select('slide')->first();
-        $slides = DB::table('banner')->get();
+        //$slides = DB::table('banner')->get();
         return view('banner.index',['slide'=>$slide,'slides'=>$slides]);
         
     }
@@ -83,7 +84,13 @@ class BannerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $banner = Banner::find($id);
+
+        if (!$banner) {
+            return redirect()->route('banner.index')->with('error', 'Banner không tồn tại.');
+        }
+    
+        return view('banner.edit', compact('banner'));
     }
 
     /**
@@ -95,7 +102,29 @@ class BannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $banner = Banner::find($id);
+
+    if (!$banner) {
+        return redirect()->route('banner.index')->with('error', 'Banner không tồn tại.');
+    }
+
+    $des = 'public/upload';
+
+    if ($request->hasFile('slide1')) {
+        $imgname1 = $request->file('slide1')->getClientOriginalName();
+        $banner->slide1 = $imgname1;
+        $request->file('slide1')->move($des, $imgname1);
+    }
+
+    if ($request->hasFile('ads')) {
+        $imgname2 = $request->file('ads')->getClientOriginalName();
+        $banner->ads = $imgname2;
+        $request->file('ads')->move($des, $imgname2);
+    }
+
+    $banner->save();
+
+    return redirect()->route('banner.index')->with('success', 'Cập nhật banner thành công.');
     }
 
     /**

@@ -30,6 +30,7 @@
 
       </tbody>
     </table>
+    
     <div class="d-flex justify-content-center">{{ $categories->links() }}</div>
                 <p class="d-flex justify-content-end">
                     <a class="btn btn-info btn-sm fa fa-plus" href="{{ route('category.create') }}">Thêm danh mục</a>

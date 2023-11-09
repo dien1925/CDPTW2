@@ -20,7 +20,7 @@
         <td>
            {{ $product->productName }} 
         <td>
-             <div class="product-image-thumb" ><img src="{{ asset('upload/'. $product->productImage) }}" alt="Product Image"></div>
+             <div class="product-image-thumb" ><img src="{{ asset('public/upload/'. $product->productImage) }}" alt="Product Image"></div>
         </td>
         <td>
           {{number_format($product->listPrice)}}đ
@@ -32,6 +32,7 @@
               {{ csrf_field() }}
               @method('DELETE')
               <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="button btn btn-danger">Xóa</button>
+
               </form>
           
           </td>

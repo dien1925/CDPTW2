@@ -76,8 +76,8 @@ charset=utf-8" />
             <input type="checkbox" class="chechbox">
 
             <button type="submit">
-                                   Đăng Nhập
-                                </button>
+                Đăng Nhập
+            </button>
         </form>
         
         </div>

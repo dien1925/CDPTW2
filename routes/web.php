@@ -99,4 +99,7 @@ Route::get('orderdetail', function () {
   return view('orderdetail');
     
 })->name('orderdetail')->middleware('UserRole');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+
 

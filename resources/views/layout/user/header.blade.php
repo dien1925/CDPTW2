@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md header-background navbar-dark">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="{{ route('home') }}">
       <i class="fas fa-home"></i>
       <h5>Home</h5>
   </a>
@@ -146,17 +146,29 @@
   <nav class="navbar hr">
       <a class="nav-link btn btn-primary" href="{{ route('home') }}"><i class="fas fa-home"></i>Trang chủ</a>
       <a class="nav-link" href="{{ route('gioithieu') }}"><i class="far fa-hand-point-right"></i>Giới thiệu</a>
-      <div class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
-              <i class="fas fa-bars"></i> Sản phẩm
-          </a>
-          <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">CPU</a>
-              <a class="dropdown-item" href="#">Thùng Case</a>
-              <a class="dropdown-item" href="#">Màn Hình</a>
-              <a class="dropdown-item" href="#">Ram</a>
-          </div>
-      </div>
+     {{-- <div class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bars"></i> Sản phẩm
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach ($categories as $category)
+            <a class="dropdown-item" href="{{ route('product.show', $category->categoryID) }}">{{ $category->categoryName }}</a>
+        @endforeach
+    </div>
+</div> --}}
+<div class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-bars"></i> Sản phẩm
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">CPU</a>
+        <a class="dropdown-item" href="#">Thùng Case</a>
+        <a class="dropdown-item" href="#">Màn Hình</a>
+        <a class="dropdown-item" href="#">Ram</a>
+    </div>
+</div>
+
+    
       <div class="nav-item dropdown">
           <a class="nav-link" href="#">
               <i class="fas fa-headset"></i> Liên hệ
