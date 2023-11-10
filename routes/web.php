@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-//định tuyến cho cartcontroller
+//định tuyến cho cartcontroller
 Route::get('Add-Cart/{id}', 'CartController@AddCart');
 // xóa tại cart ajax
 Route::get('Delete-Item-Cart/{id}', 'CartController@DeleteItemCart');
@@ -47,12 +47,26 @@ Route::post('All-Save','CartController@SaveAllItem');
 
 Route::get('checkout', 'CheckoutController@getCheckOut');
 Route::post('Check-Out', 'CheckoutController@postCheckOut');
+// thanh toán trực tuyến vnpay
+Route::get('Return-Result', 'VnPayController@return');
 // điều hướng đến trang thông tin tài khoản
 Route::resources([
   'info'=>'UserController',
 ]);
+// điều hướng đến list sản phẩm và chi tiết sản phẩm tại public
+Route::get('show/{show}', 'ProductsController@showlist')->name('proshow.show');
+Route::get('showdetail/{show}', 'ProductsController@showdetail')->name('detail.show');
+Route::get('Add-Item-Cart/{id}', 'ProductsController@AddItemCart')->name('add.itemcart');
 
-
+// xây dựng cấu hình
+Route::get('buildpc', 'BuildController@index')->name('build.index');
+Route::get('choose-product/{id}', 'BuildController@choose')->name('build.choose');
+// xem ds product ajax
+Route::get('View-Pro/{id}', 'BuildController@show');
+//điều hướng đến controller xử lí comment
+Route::resource('/comments','CommentsController');
+Route::resource('/replies','RepliesController');
+Route::post('/replies/ajaxDelete','RepliesController@ajaxDelete');
 //định tuyến đến trang home người dùng
 Route::get('/','HomeController@index')->name('home');
 Route::post('find','HomeController@find')->name('home.find');
