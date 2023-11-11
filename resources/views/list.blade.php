@@ -110,6 +110,26 @@
            $("#list-cart").html(response);
    
    }
+   $(".edit-all").on("click", function(){
+            var lists = [];
+            $("table tbody tr td").each(function(){
+              $(this).find("input").each(function(){
+                 var element = { key: $(this).data("id"), value: $(this).val()};
+                 lists.push(element);
+              });
+            });
+            $.ajax({
+         url: 'All-Save',
+         type: 'POST',
+         data: {
+            "_token" : "{{ csrf_token() }}",
+            "data" : lists
+         }
+         }).done(function (response) {
+           RenderListCart(response);
+           alertify.success('Đã cập nhật sản phẩm');
+         });
+   });
    
 </script>
 @endsection
