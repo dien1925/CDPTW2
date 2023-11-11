@@ -17,11 +17,12 @@ class ProductdetailController extends Controller
      */
     public function index()
     {
+
       $products = DB::table('productdetails')
                     ->join('products', 'productdetails.productID', '=', 'products.productID')
                     ->select('productdetails.*', 'products.productName as productName')
                     ->get();
-       
+    $products = ProductDetail::paginate(2);
         return view('productdetail.index',['products'=>$products]);
     }
 

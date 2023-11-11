@@ -53,7 +53,7 @@
        @endforeach
       </tbody>
     </table>
-  
+    <div class="d-flex justify-content-center">{{ $products->links() }}</div>
     <p class="d-flex justify-content-end">
         <a class="btn btn-info btn-sm fa fa-plus" href="{{ route('prodetail.create') }}">Thêm chi tiết cho Sản phẩm</a>
     </p>
