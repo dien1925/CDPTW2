@@ -88,8 +88,8 @@ class ProductdetailController extends Controller
      */
     public function show($id)
     {
-    $prodetail = ProductDetail::find($id);
-    return view('productdetail.show', ['productdetail' => $prodetail]);
+        $prodetail = ProductDetail::find($id);
+        return view('productdetail.show', ['productdetail' => $prodetail]);
     }
 
     /**

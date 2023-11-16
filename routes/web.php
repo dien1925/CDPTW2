@@ -61,6 +61,8 @@ Route::get('showdetail/{show}', 'ProductsController@showdetail')->name('detail.s
 Route::get('Add-Item-Cart/{id}', 'ProductsController@AddItemCart')->name('add.itemcart');
 Route::get('showdetailproduct/{id}', 'ProductsController@showdetailproduct')->name('product.showdetail');
 
+Route::get('productdetail/{id}', 'ProductdetailController@show')->name('productdetail.show');
+
 
 // xây dựng cấu hình
 Route::get('buildpc', 'BuildController@index')->name('build.index');

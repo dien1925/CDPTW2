@@ -1,8 +1,11 @@
 @extends('layout.admin.main')
 
 @section('content')
-    <h1>asdas</h1>
-    <p>dadasd</p>
-    <p>Price: 12</p>
-    {{-- Thêm các thông tin khác --}}
+<h3>{{ $productdetail->productID}}</h3>
+<h6>{{ $productdetail->brand}}</h6>
+<h6>{{ $productdetail->guarantee}} tháng</h6>
+<h6>{{ $productdetail->productImage1 }}</h6>
+<h6>{{ $productdetail->productImage2}}</h6>
+<h6>{{ $productdetail->productImage3}}</h6>
+
 @endsection

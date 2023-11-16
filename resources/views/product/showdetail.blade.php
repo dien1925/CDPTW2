@@ -6,7 +6,7 @@
     <h6>{{ $product->productImage }}</h6>
     <h6>{{ $product->listPrice }}</h6>
     <h6>{{ $product->price_sale }}</h6>
-    <h6>{{ $product->discountPercent     }}</h6>
+    <h6>{{ $product->discountPercent}}</h6>
     
     <p></p>
 </div>
