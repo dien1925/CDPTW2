@@ -27,14 +27,13 @@
         </td>
         <td>{{ $product->discountPercent }}%</td>
         <td> 
-            <a class="button btn btn-success" href="{{ route('product.edit',$product->productID) }}"><i class="fas fa-tools"></i>  Sửa</a>
-            <form class="d-inline-block " action="{{ route('product.destroy',$product->productID) }}" method="post" >
-              {{ csrf_field() }}
-              @method('DELETE')
-              <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="button btn btn-danger">Xóa</button>
-
-              </form>
-          
+          <a class="button btn btn-danger" href="{{ route('product.showdetail', $product->productID) }}"><i class="fas fa-info-circle"></i> Chi tiết</a>
+          <a class="button btn btn-success" href="{{ route('product.edit',$product->productID) }}"><i class="fas fa-tools"></i>  Sửa</a>
+          <form class="d-inline-block " action="{{ route('product.destroy',$product->productID) }}" method="post" >
+            {{ csrf_field() }}
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="button btn btn-danger">Xóa</button>
+            </form>
           </td>
       </tr>
        @endforeach

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use App\ProductDetail;
 
 
+
 class ProductsController extends Controller
 {
    
@@ -32,6 +33,14 @@ class ProductsController extends Controller
        return view('productdetail',['product'=>$product, 'prodetail'=>$prodetail, 'comments'=>$comments, 'products'=>$products]);
 
    }
+   
+    public function showdetailproduct( $id )
+    {
+        $product = Product::find($id);
+        // print_r( $product);die();
+        return view('product.showdetail', ['product' => $product]);
+
+    }
    public function AddItemCart(Request $request, $productID)
    {   //lay giỏ hàng cũ 
     $product = DB::table('products')->where('productID', $productID)->first();

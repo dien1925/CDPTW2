@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Controller;
 use App\ProductDetail;
 use Illuminate\Http\Request;
@@ -88,7 +88,8 @@ class ProductdetailController extends Controller
      */
     public function show($id)
     {
-        //
+    $prodetail = ProductDetail::find($id);
+    return view('productdetail.show', ['productdetail' => $prodetail]);
     }
 
     /**

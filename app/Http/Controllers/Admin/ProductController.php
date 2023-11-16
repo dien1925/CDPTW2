@@ -71,6 +71,8 @@ class ProductController extends Controller
         return view('product.show', ['categories' => $categories, 'products' => $products]);
     }
 
+
+
     /**
      * Show the form for editing the specified resource.
      *
