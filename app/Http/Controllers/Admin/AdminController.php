@@ -16,13 +16,13 @@ class AdminController extends Controller
    $sql = "select * from v_quantity";
    $quantity = DB::select($sql);
    //c2 . sử dụng query buider
-   /*
-   $quantity = DB::table("categories)
-   ->join('products','categories.categoryID','=','products.categoryID)
+   
+   /* $quantity = DB::table("categories")
+   ->join('products','categories.categoryID','=','products.categoryID')
    ->select('categoryName',DB::raw('count(products.productID) as quantity'))
    ->groupby('categoryName')
-   ->get();
-   */
+   ->get(); */
+  
         return view('admin',['quantity'=>$quantity]);
     }
      public function find(Request $request)

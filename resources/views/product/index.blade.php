@@ -20,7 +20,7 @@
         <td>
            {{ $product->productName }} 
         <td>
-             <div class="product-image-thumb" ><img src="{{ asset('upload/'. $product->productImage) }}" alt="Product Image"></div>
+             <div class="product-image-thumb" ><img src="{{ asset('/public/upload'. $product->productImage) }}" alt="Product Image"></div>
         </td>
         <td>
           {{number_format($product->listPrice)}}đ

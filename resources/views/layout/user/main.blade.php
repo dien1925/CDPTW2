@@ -33,7 +33,7 @@
 <!-- Bootstrap theme -->
 <link rel="stylesheet" href="{{ asset('frontend/alertifyjs/css/themes/bootstrap.min.css') }}">
 <link rel="stylesheet" href="{{ asset('frontend/swiper/css/swiper.min.css') }}">
-<link rel="stylesheet" href="{{ asset('frontend/swiper/style.css') }}">
+<link rel="stylesheet" href="{{ asset('public/frontend/swiper/style.css') }}">
 
 
     

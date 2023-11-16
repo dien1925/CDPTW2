@@ -94,7 +94,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $des= 'public/upload';
+        $des= '/public/upload';
         $imgname = $request->file('productImage')->getClientOriginalName();
         $product = Product::find($id);
         $product->categoryID = $request->categoryID;
