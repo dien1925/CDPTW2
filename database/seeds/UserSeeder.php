@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             [
                 ['name'=>'admin','email'=>'admin@gmail.com','password'=>bcrypt('123456789'),
                 'typeuser'=>'admin'],
-                ['name'=>'phuc','email'=>'phuc@gmail.com','password'=>bcrypt('123456789'),
+                ['name'=>'Hai','email'=>'hai@gmail.com','password'=>bcrypt('123456789'),
                 'typeuser'=>'user']
             ]
         );

@@ -25,20 +25,13 @@
         </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('upload/banner1.jpg') }}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('public/upload/' . $slide->slide) }}" alt="First slide">
             </div>
+            @foreach ($slides as $item)
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner1.jpg') }}">
+                <img class="d-block w-100" src="{{ asset('public/upload/' . $item->slide1) }}">
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner3.jpg') }}">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner4.jpg') }}">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner4.jpg') }}">
-            </div>
+            @endforeach
 
         </div>
 
@@ -68,7 +61,7 @@
                     @foreach ($products as $product)
                         <div class="col-md-3 col-sm-6 col-12">
                             <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('public/upload/' . $product->productImage) }}"
+                                <img class="card-img-top" src="{{ asset('/public/upload/' . $product->productImage) }}"
                                     alt="Card image cap">
                                 <div class="card-body">
                                     <h6 class="card-title product-title mb-3">
@@ -142,7 +135,7 @@
                         @foreach ($vocase as $item)
                             <div class="col-md-3 col-sm-6 col-12">
                                 <div class="card card-product">
-                                    <img class="card-img-top" src="{{ asset('public/upload/' . $item->productImage) }}"
+                                    <img class="card-img-top" src="{{ asset('/public/upload' . $item->productImage) }}"
                                         alt="Card image cap">
                                     <div class="card-body">
                                         <h6 class="card-title product-title mb-3">

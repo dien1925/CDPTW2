@@ -96,6 +96,12 @@ class BannerController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $banner = Banner::find($id);
+        $des= 'public/upload';
+        $imgname = $request->file('slide')->getClientOriginalName();
+        $banner->save();
+        $request->file('slide')->move($des,$imgname);
+        return redirect()->route('category.index');
     }
 
     /**

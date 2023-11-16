@@ -13,7 +13,7 @@
       </thead>
       <tbody>
                <tr> 
-                   <td><div class="" ><img  src="{{ asset('upload/' . $slide->slide) }}" alt="Product Image" style="width: 300px;"></div></td>
+                   <td><div class="" ><img  src="{{ asset('public/upload/' . $slide->slide) }}" alt="Product Image" style="width: 300px;"></div></td>
                       <td> <a class="button btn btn-success" href=""><i class="fas fa-tools"></i>  Sửa</a></td>
                </tr>
                <tr class="bg-info text-white">
@@ -25,7 +25,7 @@
                @foreach ($slides as $item)
                
            <tr>
-            <td><div class="" ><img  src="{{ asset('upload/' . $item->slide1) }}"  alt="Product Image" style="width: 300px;"></div></td>
+            <td><div class="" ><img  src="{{ asset('public/upload/' . $item->slide1) }}"  alt="Product Image" style="width: 300px;"></div></td>
             
             <td> 
               <a class="button btn btn-success" href=""><i class="fas fa-tools"></i>  Sửa</a>

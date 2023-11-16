@@ -202,11 +202,11 @@
         <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="navbarDropdown"><i class="fas fa-bars"></i> Sản phẩm</a>
             <div class="dropdown-content">
-
-                <a class="dropdown-item" href="#">CPU</a>
-                <a class="dropdown-item" href="#">CPU</a>
-                <a class="dropdown-item" href="#">CPU</a>
-
+                @foreach (App\Category::all() as $item)
+                    <a class="dropdown-item" href="{{ route('proshow.show', $item->categoryID)}}">
+                        {{ $item->categoryName }}
+                    </a>
+                @endforeach
             </div>
         </li>
         <li class="nav-item dropdown">

@@ -195,7 +195,7 @@
                         <div class="slider-box">
                             <p class="time">New</p>
                             <div class="img-box">
-                                <img src="../public/upload/{{ $pro->productImage }}">
+                                <img src="../public/upload/{{ $pro->productImage }}" style="width: 100%">
                             </div>
 
                             <p class="detail product-title" data-toggle="tooltip" data-placement="bottom"
