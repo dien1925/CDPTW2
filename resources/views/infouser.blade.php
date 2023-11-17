@@ -32,8 +32,9 @@
 
             <div class="form-group">
                 <label for="phonenumber" style="font-weight: bold">Số điện thoại</label>
-                <input type="text" name="phonenumber" id="address" class="form-control" value="{{ Auth::user()->phonenumber }}">
+                <input type="tel" name="phonenumber" id="phonenumber" class="form-control" value="{{ Auth::user()->phonenumber }}" pattern="[0-9]*">
             </div>
+            
             <div class="form-group">
                 <label for="address" style="font-weight: bold">Địa chỉ</label>
                 <input type="text" name="address" id="address" class="form-control" value="{{ Auth::user()->address }}">

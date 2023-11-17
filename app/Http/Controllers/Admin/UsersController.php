@@ -16,7 +16,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = Users::where('typeuser','user')->get();
+        $users = Users::paginate(3);
+        //$users = Users::where('typeuser','user')->get();
        return view('account.index',['users'=>$users]);
     }
 

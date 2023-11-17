@@ -46,21 +46,9 @@
 	<script src="{{ asset('public/frontend/dangky/js/main.js') }}"></script>
 
 </head>
-<body>
-	
-
-   
-         
-                        
-          <main class="py-4">
-            @yield('content')
-        </main>   
-                
-               
-    
-
-	
-	
-
-</body>
+	<body>                    
+		<main class="py-4">
+			@yield('content')
+		</main>   
+	</body>
 </html>

@@ -10,8 +10,6 @@
             <th>Tên sản phẩm</th>
             <th>Ảnh sản phẩm</th>
          <th>Giá sản phẩm</th>
-       
-    
         </tr>
       </thead>
       <tbody>
@@ -29,8 +27,6 @@
         
       </tr>
        @endforeach
-       
-
 
       </tbody>
     </table>

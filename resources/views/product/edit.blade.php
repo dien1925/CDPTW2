@@ -24,9 +24,10 @@
             </div>
             <div class="form-group">
                 <label for="productImage" style="font-weight: bold">Hình ảnh sản phẩm</label>
-                <input type="file" name="productImage" id="productImage" class="form-control">
-              
+                <input type="file" name="productImage" id="productImage" class="form-control" required>
+                <small class="text-danger">Vui lòng chọn ảnh</small>
             </div>
+            
 
             <div class="form-group">
                 <label for="listPrice" style="font-weight: bold">Giá sản phẩm</label>
@@ -42,10 +43,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-info btn-sm" value="Lưu sản phẩm">
-
             </div>
-
-            
             </form>
         </div>
     </div>

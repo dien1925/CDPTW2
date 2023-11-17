@@ -15,14 +15,9 @@
            @foreach ($quantity as $row)
            <tr>
             <td class="font-weight-bold">{{ $row->categoryName }}</td>
-            
             <td>hiện đang có {{ $row->quantity }} Sản phẩm</td>
           </tr>
            @endforeach
-
-        
- 
-
       </tbody>
     </table>
   </div>

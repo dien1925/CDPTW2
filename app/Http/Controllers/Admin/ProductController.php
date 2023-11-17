@@ -66,11 +66,12 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $categories = Category::where('categories.categoryID',$id)->get();
-        $products = Product::where('categoryID',$id)->get();
-        return view('product.show',['categories'=>$categories,'products'=>$products]);
-
+        $categories = Category::where('categories.categoryID', $id)->get();
+        $products = Product::where('categoryID', $id)->paginate(5);
+        return view('product.show', ['categories' => $categories, 'products' => $products]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

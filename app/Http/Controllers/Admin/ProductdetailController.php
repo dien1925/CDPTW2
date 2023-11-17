@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Controller;
 use App\ProductDetail;
 use Illuminate\Http\Request;
@@ -17,11 +17,12 @@ class ProductdetailController extends Controller
      */
     public function index()
     {
+
       $products = DB::table('productdetails')
                     ->join('products', 'productdetails.productID', '=', 'products.productID')
                     ->select('productdetails.*', 'products.productName as productName')
                     ->get();
-       
+    $products = ProductDetail::paginate(2);
         return view('productdetail.index',['products'=>$products]);
     }
 
@@ -87,7 +88,8 @@ class ProductdetailController extends Controller
      */
     public function show($id)
     {
-        //
+        $prodetail = ProductDetail::find($id);
+        return view('productdetail.show', ['productdetail' => $prodetail]);
     }
 
     /**
