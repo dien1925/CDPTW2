@@ -25,20 +25,20 @@
         </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{{ asset('upload/banner1.jpg')}}" alt="First slide">
+                <img class="d-block w-100" src="{{ asset('upload/banner1.jpg') }}" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner1.jpg')}}">
+                <img class="d-block w-100" src="{{ asset('upload/banner1.jpg') }}">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner3.jpg')}}">
+                <img class="d-block w-100" src="{{ asset('upload/banner3.jpg') }}">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="{{ asset('upload/banner4.jpg')}}">
+                <img class="d-block w-100" src="{{ asset('upload/banner4.jpg') }}">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="{{ asset('upload/banner4.jpg')}}">
-          </div>
+                <img class="d-block w-100" src="{{ asset('upload/banner4.jpg') }}">
+            </div>
 
         </div>
 
@@ -65,177 +65,38 @@
             <div class="product-group mt-2">
                 <div class="row ">
                     <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu3.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-                CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
+                    @foreach ($products as $product)
+                        <div class="col-md-3 col-sm-6 col-12">
+                            <div class="card card-product">
+                                <img class="card-img-top" src="{{ asset('public/upload/' . $product->productImage) }}"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <h6 class="card-title product-title mb-3">
+                                        <a data-toggle="tooltip" data-placement="bottom"
+                                            title="{{ $product->productName }}">
+                                            {{ $product->productName }}
+                                        </a>
 
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href=""> Xem
-                                        chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
+                                    </h6>
+                                    <div class="card-text">
+                                        <span class="new-price"> {{ number_format($product->listPrice) }} VNĐ</span>
+                                        <span class="old-price text-secondary"> {{ number_format($product->listPrice) }}
+                                            VNĐ </span>
+                                        <br>
+                                        <a class="btn btn-success btn-add-to-cart mt-2"
+                                            onclick="AddCart({{ $product->productID }})" href="javascript:"><i
+                                                class="fas fa-cart-arrow-down"></i></a>
+                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
+                                            href="{{ route('detail.show',$product->productID) }}"> Xem
+                                            chi tiết</a>
+                                        <span class="badge badge-danger text-white">
+                                            <h6>{{ $product->discountPercent }}%</h6>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu1.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-            CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href=""> Xem
-                                        chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu2.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-        CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/cpu4.jpg')}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-        CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/case3.jp')}}g" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom"
-                                        title="
-      CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end-->
-                    <!-- dat foreach -->
-                    <div class="col-md-3 col-sm-6 col-12">
-                        <div class="card card-product">
-                            <img class="card-img-top" src="{{ asset('upload/case8.jp')}}g" alt="Card image cap">
-                            <div class="card-body">
-                                <h6 class="card-title product-title mb-3">
-                                    <a data-toggle="tooltip" data-placement="bottom" title="
-    CPU INTEL Core i7-9700">
-                                        CPU INTEL Core i7-9700
-                                    </a>
-
-                                </h6>
-                                <div class="card-text">
-                                    <span class="new-price"> 8,990,000 VNĐ</span>
-                                    <span class="old-price text-secondary"> 9,990,000 VNĐ </span>
-                                    <br>
-                                    <a class="btn btn-success btn-add-to-cart mt-2" onclick="" href="javascript:"><i
-                                            class="fas fa-cart-arrow-down"></i></a>
-                                    <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold" href="">
-                                        Xem chi tiết</a>
-                                    <span class="badge badge-danger text-white">
-                                        <h6>10%</h6>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <!--end-->
                 </div>
 
@@ -261,10 +122,10 @@
         <div class="row mt-5">
             <div class="col-sm-4">
 
-                <img src="{{ asset('upload/ads1.jpg')}}" alt="ads" class="rounded" width="390" height="190">
+                <img src="{{ asset('upload/ads1.jpg') }}" alt="ads" class="rounded" width="390" height="190">
             </div>
             <div class="col-sm-4">
-                <img src="{{ asset('upload/ads2.jpg')}}" alt="ads" class="rounded" width="390" height="190">
+                <img src="{{ asset('upload/ads2.jpg') }}" alt="ads" class="rounded" width="390" height="190">
             </div>
         </div>
     </div>
@@ -278,207 +139,37 @@
                 <div class="product-group">
                     <div class="row ">
                         <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case1.we')}}bp" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
+                        @foreach ($vocase as $item)
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="card card-product">
+                                    <img class="card-img-top" src="{{ asset('public/upload/' . $item->productImage) }}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <h6 class="card-title product-title mb-3">
+                                            <a data-toggle="tooltip" data-placement="bottom"
+                                                title="{{ $item->productName }}">
+                                                {{ $item->productName }}
+                                            </a>
 
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href=""> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
+                                        </h6>
+                                        <div class="card-text">
+                                            <span class="new-price"> {{ number_format($item->listPrice) }} VNĐ </span>
+                                            <span class="old-price text-secondary"> {{ number_format($item->listPrice) }}
+                                                VNĐ
+                                            </span>
+                                            <br>
+                                            <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
+                                                href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
+                                            <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
+                                                href=""> Xem chi tiết</a>
+                                            <span class="badge badge-danger text-white">
+                                                <h6>{{ $item->discountPercent }}%</h6>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--end-->
-                        <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case2.we')}}bp" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
-
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href="{{ url('showdetail/33') }}"> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end-->
-                        <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case3.jp')}}g" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
-
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href=""> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end-->
-                        <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case4.pn')}}g" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
-
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href=""> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end-->
-                        <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case7.jp')}}g" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
-
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href=""> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end-->
-                        <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case8.jp')}}g" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
-
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href=""> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--end-->
-                        <!-- dat foreach -->
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <div class="card card-product">
-                                <img class="card-img-top" src="{{ asset('upload/case1.we')}}bp" alt="Card image cap">
-                                <div class="card-body">
-                                    <h6 class="card-title product-title mb-3">
-                                        <a data-toggle="tooltip" data-placement="bottom"
-                                            title="Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)">
-                                            Vỏ Case Xigmatek Aquarius S Queen (Pink, No Fan)
-                                        </a>
-
-                                    </h6>
-                                    <div class="card-text">
-                                        <span class="new-price"> 1.299.000 VNĐ </span>
-                                        <span class="old-price text-secondary"> 1.399.000 VNĐ
-                                        </span>
-                                        <br>
-                                        <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
-                                            href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
-                                        <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
-                                            href=""> Xem chi tiết</a>
-                                        <span class="badge badge-danger text-white">
-                                            <h6>5%</h6>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                         <!--end-->
                     </div>
 
@@ -502,40 +193,36 @@
                 <div class="product-group">
                     <div class="row ">
                         <!-- dat foreach -->
+                        @foreach ($monitor as $item)
                             <div class="col-md-3 col-sm-6 col-12">
                                 <div class="card card-product">
-                                    <img class="card-img-top" src="{{ asset('upload/mn1.webp')}}"
-                                        alt="Card image cap">
+                                    <img class="card-img-top" src="{{ asset('public/upload/' . $item->productImage) }}" alt="Card image cap">
                                     <div class="card-body">
                                         <h6 class="card-title product-title mb-3">
-                                            <a data-toggle="tooltip" data-placement="bottom"
-                                                title="Màn hình Acer 21.5" HA220QA">
-                                              Màn hình Acer 21.5" HA220QA
+                                            <a data-toggle="tooltip" data-placement="bottom" title="{{ $item->productName }}"
+                                                HA220QA">
+                                                {{ $item->productName }}
                                             </a>
 
                                         </h6>
                                         <div class="card-text">
-                                            <span class="new-price"> 2,910,000 VNĐ </span>
-                                            <span class="old-price text-secondary"> 3,110,000 VNĐ
+                                            <span class="new-price"> {{number_format($item->listPrice)}} VNĐ </span>
+                                            <span class="old-price text-secondary"> {{number_format($item->listPrice)}} VNĐ
                                             </span>
                                             <br>
-                                            <a class="btn btn-success btn-add-to-cart mt-2"
-                                                onclick="" href="javascript:"><i
-                                                    class="fas fa-cart-arrow-down"></i></a>
+                                            <a class="btn btn-success btn-add-to-cart mt-2" onclick=""
+                                                href="javascript:"><i class="fas fa-cart-arrow-down"></i></a>
                                             <a class="btn btn-outline-success btn-detail mt-2 font-weight-bold"
                                                 href="{{ url('showdetail/33') }}"> Xem chi tiết</a>
                                             <span class="badge badge-danger text-white">
-                                                <h6>5%</h6>
+                                                <h6>{{ $item->discountPercent }}%</h6>
                                             </span>
-
                                         </div>
-
                                     </div>
                                 </div>
-
                             </div>
+                        @endforeach
                     </div>
-
                 </div>
             </div>
             <div class="row mt-5">
