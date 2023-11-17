@@ -53,32 +53,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-       $category = Category::find($id); 
-       return view('category.edit',['category'=>$category]);
-
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function show(Request $request, $id)
     {
         $product = Product::find($id);
 
@@ -101,6 +76,38 @@ class CategoryController extends Controller
         $product->save();
     
         return redirect()->route('product.index');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+       $category = Category::find($id); 
+       return view('category.edit',['category'=>$category]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $category = Category::find($id);
+        $request->validate([
+            'categoryName' => 'required',
+            'cate_description' => 'required',
+        ]);
+        $category->categoryName = $request->categoryName;
+        $category->cate_description = $request->cate_description;
+        $category->save();
+        return redirect()->route('category.index');
     }
 
     /**

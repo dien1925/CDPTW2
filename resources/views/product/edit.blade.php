@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-10">
-            <form action="{{ route('product.update',$product->productID) }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('product.update',$product->productID) }}" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PUT')
             <div class="form-group">
@@ -21,6 +21,7 @@
             <div class="form-group">
                 <label for="productName" style="font-weight: bold">Tên Sản Phẩm</label>
                 <input type="text" name="productName" id="productName" class="form-control" value="{{ $product->productName }}">
+                <span id="charCount" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label for="productImage" style="font-weight: bold">Hình ảnh sản phẩm</label>
@@ -49,15 +50,37 @@
     </div>
 </div>
 <script>
-    $(document).ready(function(){
-   
-   $('.summernote').summernote({
-       height: 240,
-       minHeight: null,
-       maxHeight: null,
-       focus: false
-   });
-   
-   });
-     </script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            height: 240,
+            minHeight: null,
+            maxHeight: null,
+            focus: false
+        });
+
+
+        $('#productName').on('input', function() {
+            var maxLength = 255; 
+            var currentLength = $(this).val().length;
+
+            if (currentLength > maxLength) {
+                $('#charCount').text('Vui lòng không nhập quá ' + maxLength + ' ký tự.');
+            } else {
+                $('#charCount').text('');
+            }
+        });
+    });
+
+    function validateForm() {
+        var maxLength = 255; 
+        var currentLength = $('#productName').val().length;
+
+        if (currentLength > maxLength) {
+            alert('Vui lòng không nhập quá ' + maxLength + ' ký tự.');
+            return false; 
+        }
+
+        return true; 
+    }
+</script>
 @endsection
