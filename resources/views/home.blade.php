@@ -113,11 +113,11 @@
     <!-- 3 banner quảng cáo - 2 list sản phẩm -->
     <div class="container">
         <div class="row mt-5">
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="max-width: 35%;">
 
-                <img src="{{ asset('upload/ads1.jpg') }}" alt="ads" class="rounded" width="390" height="190">
+                <img src="{{ asset('/upload/ads1.jpg') }}" alt="ads" class="rounded" width="390" height="190">
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" style="max-width: 35%;">
                 <img src="{{ asset('upload/ads2.jpg') }}" alt="ads" class="rounded" width="390" height="190">
             </div>
         </div>
