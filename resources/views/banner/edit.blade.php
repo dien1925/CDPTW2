@@ -17,7 +17,6 @@
             <div class="form-group">
                 <label for="slide1" style="font-weight: bold">Chọn hình ảnh cho slide:</label>
                 <input type="file" name="slide1" id="slide1" class="form-control-file">
-  
                 <img src="{{ asset('upload/' . $banner->slide1) }}" alt="Current Image">
             </div>
             <div class="form-group">

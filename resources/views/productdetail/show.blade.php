@@ -1,11 +1,23 @@
 @extends('layout.admin.main')
 
 @section('content')
-<h3>{{ $productdetail->productID}}</h3>
-<h6>{{ $productdetail->brand}}</h6>
-<h6>{{ $productdetail->guarantee}} tháng</h6>
-<h6>{{ $productdetail->productImage1 }}</h6>
-<h6>{{ $productdetail->productImage2}}</h6>
-<h6>{{ $productdetail->productImage3}}</h6>
+<h3>Tên sản phẩm: {{ $productdetail->productName }} </h3>
+<h6>Hãng: {{ $productdetail->brand}}</h6>
+<h6>Thời gian bảo hành: {{ $productdetail->guarantee}} tháng</h6>
+<H5>Hình ảnh chi tiết</H5>
+     <div class="product-image-thumb">
+         <img src="{{ asset('public/upload/' . $productdetail->productImage1) }}" alt="Product Image">
+     </div>
+     @if ($productdetail->productImage2 != null)
+         <div class="product-image-thumb">
+             <img src="{{ asset('public/upload/' . $productdetail->productImage2) }}" alt="Product Image">
+         </div>
+     @endif
+     @if ($productdetail->productImage3 != null)
+         <div class="product-image-thumb">
+             <img src="{{ asset('public/upload/' . $productdetail->productImage3) }}" alt="Product Image">
+         </div>
+     @endif
+
 
 @endsection

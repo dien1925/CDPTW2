@@ -2,12 +2,10 @@
 @section('content')
 
 <div class="main-contentProduct">
-    <h3>{{ $product->productName }}</h3>
-    <h6>{{ $product->productImage }}</h6>
-    <h6>{{ $product->listPrice }}</h6>
-    <h6>{{ $product->price_sale }}</h6>
-    <h6>{{ $product->discountPercent}}</h6>
-    
+    <h3>Tên sản phẩm: {{ $product->productName }}</h3>
+    <h5>Hình ảnh sản phẩm: <div class="product-image-thumb" ><img src="{{ asset('public/upload/'. $product->productImage) }}" alt="Product Image"></div></h5>
+    <h5>Giá: {{ $product->listPrice }} đồng</h5>
+    <h5>Phần trăm giảm:{{ $product->discountPercent}}%</h5>
     <p></p>
 </div>
 
