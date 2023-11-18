@@ -1,6 +1,7 @@
 @extends('layout.admin.main')
 
 @section('content')
+@if(isset($productdetail))
 <h3>Tên sản phẩm: {{ $productdetail->productName }} </h3>
 <h6>Hãng: {{ $productdetail->brand}}</h6>
 <h6>Thời gian bảo hành: {{ $productdetail->guarantee}} tháng</h6>
@@ -18,6 +19,8 @@
              <img src="{{ asset('public/upload/' . $productdetail->productImage3) }}" alt="Product Image">
          </div>
      @endif
-
+     @else
+     <p>Sản phẩm không tồn tại.</p>
+ @endif
 
 @endsection

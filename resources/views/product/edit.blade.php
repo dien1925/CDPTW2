@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-10">
-            <form action="{{ route('product.update',$product->productID) }}" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
+            <form action="{{ route('product.update',$product->productID ) }}" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
             {{ csrf_field() }}
             @method('PUT')
             <div class="form-group">

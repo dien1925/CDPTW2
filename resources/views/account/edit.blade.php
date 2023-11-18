@@ -20,7 +20,7 @@
                 <input type="text" name="email" id="email" class="form-control" value="{{ $user->email }}">
               
             </div>
-
+{{-- 
             <div class="form-group">
                 <label for="phonenumber" style="font-weight: bold">Số điện thoại</label>
                 <input type="text" name="phonenumber" id="address" class="form-control" value="{{ $user->phonenumber }}">
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label for="address" style="font-weight: bold">Địa chỉ</label>
                 <input type="text" name="address" id="address" class="form-control" value="{{ $user->address }}">
-            </div>
+            </div> --}}
             <div class="form-group">
                 <label for="typeuser" style="font-weight: bold">Quyền Quản Trị</label>
                 <input type="text" name="typeuser" id="typeuser" class="form-control" value="{{ $user->typeuser }}">
