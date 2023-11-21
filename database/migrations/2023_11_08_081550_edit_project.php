@@ -13,9 +13,9 @@ class EditProject extends Migration
      */
     public function up()
     {
-         Schema::table('productdetails', function (Blueprint $table) {
-            $table->text('description')->nullable();
-        });
+        //  Schema::table('productdetails', function (Blueprint $table) {
+        //     $table->text('description')->nullable();
+        // });
         Schema::table('users', function (Blueprint $table) {
             $table->string('phonenumber')->nullable();
             $table->string('address')->nullable();
@@ -29,9 +29,9 @@ class EditProject extends Migration
      */
     public function down()
     {
-        Schema::table('productdetails', function (Blueprint $table) {
-            $table->dropColumn('description');
-        });
+        // Schema::table('productdetails', function (Blueprint $table) {
+        //     $table->dropColumn('description');
+        // });
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('phonenumber');
             $table->dropColumn('address');

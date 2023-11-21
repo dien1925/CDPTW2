@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
                 <label for="productName" style="font-weight: bold">Thời gian bảo hành</label>
-                <input type="text" name="guarantee" id="guarantee" class="form-control">
+                <input type="text" name="guarantee" id="guarantee" class="form-control" pattern="[0-9]+>
             </div>
             <div class="form-group">
                 <label for="productImage1" style="font-weight: bold">Chọn hình ảnh thứ nhất :</label>
@@ -44,7 +44,7 @@
                 <textarea name="description" class="form-control summernote" id="summernote"></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-info btn-sm" value="lưu thay đổi">
+                <input type="submit" id="submitButton" class="btn btn-info btn-sm" value="Thêm chi tiết sản phẩm">
             </div>
             </form>
         </div>
@@ -81,7 +81,7 @@
             return false; 
         }
 
-        return true; 
+        $('#submitButton').prop('disabled', true);
     }
 </script>
 @endsection

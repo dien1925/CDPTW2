@@ -34,18 +34,18 @@
             </div>
             <div class="form-group">
                 <label for="listPrice" style="font-weight: bold">Giá sản phẩm</label>
-                <input type="text" name="listPrice" id="listPrice" class="form-control">
+                <input type="text" name="listPrice" id="listPrice" class="form-control" pattern="[0-9]+>
             </div>
             <div class="form-group">
                 <label for="discountPercent" style="font-weight: bold">Phần trăm khuyến mãi</label>
-                <input type="text" name="discountPercent" id="discountPercent" class="form-control">
+                <input type="text" name="discountPercent" id="discountPercent" class="form-control" pattern="[0-9]+>
             </div>
             <div class="form-group">
                 <label for="description" style="font-weight: bold">Mô tả sản phẩm</label>
                 <textarea name="description" class="form-control summernote" id="summernote"></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-info btn-sm" value="Tạo sản phẩm">
+                <input type="submit" id="submitButton" class="btn btn-info btn-sm" value="Tạo sản phẩm">
             </div>
             </form>
         </div>
@@ -82,7 +82,7 @@
             return false; 
         }
 
-        return true; 
+        $('#submitButton').prop('disabled', true); 
     }
 </script>
 @endsection

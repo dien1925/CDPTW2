@@ -1,6 +1,9 @@
 @extends('layout.admin.main')
 @section('content')
     <h5 style="font-weight: bold;">Thêm danh mục</h5>
+    <div class="card-body">
+        @include('error')
+     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-10">
@@ -20,7 +23,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" value="Thêm danh mục" class="btn btn-info btn-sm">
+                        <input type="submit" id="submitButton" value="Thêm danh mục" class="btn btn-info btn-sm">
                     </div>
                 </form>
             </div>
@@ -58,7 +61,7 @@
                 return false; 
             }
 
-            return true; 
+            $('#submitButton').prop('disabled', true); 
         }
     </script>
 @endsection
