@@ -118,8 +118,13 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::find($id)->delete();
-        return redirect()->route('category.index');
+        // $category = Category::find($id);
+        // if ($category) {
+        // $category->delete();
+        // return redirect()->route('category.index')->with('success', 'Xóa danh mục thành công.');
+        // } else {
+        //     return redirect()->route('category.index')->with('error', 'Danh mục không tồn tại.');
+        // }
     }
     public function __construct()
     {

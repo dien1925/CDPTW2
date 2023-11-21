@@ -2,6 +2,7 @@
 @section('content')
 <h5 style="font-weight: bold">Chỉnh sữa sản phẩm</h5>
 <div class="container">
+    @if(isset($user))
     <div class="row">
         <div class="col-sm-10">
             <form action="{{ route('user.update',$user->id) }}" method="post" enctype="multipart/form-data">
@@ -44,6 +45,9 @@
             </form>
         </div>
     </div>
+    @else
+    <p>User không tồn tại.</p>
+@endif
 </div>
     
 @endsection

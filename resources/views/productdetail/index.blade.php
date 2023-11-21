@@ -2,7 +2,17 @@
 @section('content')
 <div class="container jumbotron   border border-success">
     <h2>Chi tiết sản phẩm</h2>
-           
+    @if(session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+    @endif
+    
+    @if(session('error'))
+    <div class="alert alert-danger">
+      {{ session('error') }}
+    </div>
+    @endif
     <table class="table">
       <thead class="bg-danger text-white"> 
         <tr>

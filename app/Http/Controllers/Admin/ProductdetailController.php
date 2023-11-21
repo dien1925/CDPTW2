@@ -158,7 +158,12 @@ class ProductdetailController extends Controller
      */
     public function destroy($id)
     {
-        ProductDetail::find($id)->delete();
-        return redirect()->route('prodetail.index ');
+        $prodetail = ProductDetail::find($id);
+        if ($prodetail) {
+        $prodetail->delete();
+        return redirect()->route('prodetail.index')->with('success', 'Xóa sản phẩm thành công.');
+    } else {
+        return redirect()->route('prodetail.index')->with('error', 'Sản phẩm không tồn tại.');
+    }
     }
 }

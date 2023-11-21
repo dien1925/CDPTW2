@@ -54,5 +54,26 @@ class ProductsController extends Controller
  
     return redirect()->route('list.cart');
    }
+   public function destroyCategory($id)
+    {
+        $category = Category::find($id);
+        if ($category) {
+        $category->delete();
+        return redirect()->route('category.index')->with('success', 'Xóa danh mục thành công.');
+        } else {
+            return redirect()->route('category.index')->with('error', 'Danh mục không tồn tại.');
+        }
+    }
+
+    public function destroyProdetail($id)
+    {
+        $prodetail = ProductDetail::find($id);
+        if ($prodetail) {
+        $prodetail->delete();
+        return redirect()->route('prodetail.index')->with('success', 'Xóa sản phẩm thành công.');
+    } else {
+        return redirect()->route('prodetail.index')->with('error', 'Sản phẩm không tồn tại.');
+    }
+}
    
 }

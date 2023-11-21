@@ -3,7 +3,17 @@
 @section('content')
 <div class="container jumbotron border border-success">
     <h2>Quản lí Banner quảng cáo</h2>
-
+    @if(session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+    @endif
+    
+    @if(session('error'))
+    <div class="alert alert-danger">
+      {{ session('error') }}
+    </div>
+    @endif
     <table class="table">
         <thead class="bg-info text-white"> 
             <tr>
@@ -37,7 +47,8 @@
                         <form class="d-inline-block " action="{{ route('banner.destroy', $item->id) }}" method="post">
                             {{ csrf_field() }}
                             @method('DELETE')
-                            <input type="submit" value="Xóa" class="button btn btn-secondary">
+                            <button type="submit" onclick="return confirm('Bạn có chắc chắn muốn xóa banner này?')"
+                            class="button btn btn-secondary">Xóa</button>
                         </form>
                     </td>
                 </tr>

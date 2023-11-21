@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -107,7 +108,9 @@ Route::get('orderdetail', function () {
 })->name('orderdetail')->middleware('UserRole');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::delete('productdetail/{id}', 'ProductdetailController@destroy')->name('prodetail.destroy');
+Route::delete('productdetail/{id}', 'ProductsController@destroyProdetail')->name('prodetail.destroy');
+
+Route::delete('category/{id}', 'ProductsController@destroyCategory')->name('category.destroy');
 
 
 

@@ -4,6 +4,7 @@
 <h5 style="font-weight: bold">Chỉnh sửa Banner quảng cáo</h5>
 
 <div class="container">
+    @if(isset($banner))
     <div class="row">
         <div class="col-sm-10">
             <form action="{{ route('banner.update', $banner->id) }}" method="post" enctype="multipart/form-data">
@@ -32,6 +33,9 @@
             </form>
         </div>
     </div>
+    @else
+    <p>Banner không tồn tại.</p>
+@endif
 </div>
 
 @endsection

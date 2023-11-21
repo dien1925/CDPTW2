@@ -20,6 +20,9 @@
 						<span class="label-input100">Email</span>
 						<input class="input100" id="email" type="email" name="email"  placeholder="Nhập vào Email !" value="{{ old('email') }}" required autocomplete="email">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
+						@error('email')
+							<div class="alert alert-danger">{{ $message }}</div>
+						@enderror
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Vui lòng nhập mật khẩu">

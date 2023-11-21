@@ -2,6 +2,7 @@
 @section('content')
 <h5 style="font-weight: bold">Chỉnh sửa sản phẩm</h5>
 <div class="container">
+    @if(isset($product))
     <div class="row">
         <div class="col-sm-10">
             <form action="{{ route('product.update',$product->productID ) }}" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
@@ -48,6 +49,9 @@
             </form>
         </div>
     </div>
+    @else
+    <p>Sản phẩm không tồn tại.</p>
+@endif
 </div>
 <script>
     $(document).ready(function() {

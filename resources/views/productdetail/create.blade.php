@@ -1,6 +1,9 @@
 @extends('layout.admin.main')
 @section('content')
 <h5 style="font-weight: bold">Thêm chi tiết sản phẩm</h5>
+<div class="card-body">
+    @include('error')
+ </div>
 <div class="container">
     <div class="row">
         <div class="col-sm-10">

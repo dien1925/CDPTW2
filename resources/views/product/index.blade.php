@@ -1,8 +1,19 @@
 @extends('layout.admin.main')
 @section('content')
 <div class="container jumbotron   border border-success">
+  
     <h2>Danh mục sản phẩm quản lý</h2>
-           
+@if(session('success'))
+<div class="alert alert-success">
+  {{ session('success') }}
+</div>
+@endif
+
+@if(session('error'))
+<div class="alert alert-danger">
+  {{ session('error') }}
+</div>
+@endif
     <table class="table">
       <thead class="bg-danger text-white"> 
         <tr>
@@ -45,4 +56,5 @@
         <a class="btn btn-info btn-sm fa fa-plus" href="{{ route('product.create') }}">Thêm Sản phẩm</a>
     </p>
   </div>
+  
 @endsection
